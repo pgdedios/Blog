@@ -1,0 +1,20 @@
+<h2>Comments</h2>
+
+<% @comments.each do |comment| %>
+  <div style="border: 1px solid; padding: 10px">
+    <p> Commenter: <%= comment.commenter %></p>
+    <p> Comment: <%= comment.body %></p>
+    <span style="padding: 0 10px 20px 0"><%= link_to "View", article_comment_path(@article, comment) =%></span>
+    <span style="padding: 0 10px 20px 0"><%= link_to "Edit", edit_article_comment_path(@article, comment) =%></span>
+    <span style="padding: 0 10px 20px 0">
+      <%= link_to "Destroy", article_comment_path(@article, comment), 
+        data: {
+          turbo_method: :delete,
+          turbo_confirm: "Are you sure?"
+        }
+      %>
+    </span>
+  </div>
+<% end %>
+<br>
+<%= link_to "<< Return to article", @article %>

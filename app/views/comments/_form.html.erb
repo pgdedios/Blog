@@ -1,13 +1,24 @@
-<%= form_with model: [ article, article.comments.build ] do |form| %>
-  <p>
+<%= form_with model: [ @article, @comment ] do |form| %>
+  <div>
     <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
+    <%= form.text_field :commenter %><br>
+    <% if @comment.errors[:commenter].any? %>
+      <% @comment.errors.full_messages_for(:commenter).each do |message| %>
+        <div style="color:red;"><%= message %></div>
+      <% end %>
+    <% end %>
+  </div>
+  
+  <div>
     <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
+    <%= form.text_area :body %><br>
+    <% if @comment.errors[:body].any? %>
+      <% @comment.errors.full_messages_for(:body).each do |message| %>
+        <div style="color:red;"><%= message %></div>
+      <% end %>
+    <% end %>
+  </div>
+  <div>
     <%= form.submit %>
-  </p>
+  </div>
 <% end %>
