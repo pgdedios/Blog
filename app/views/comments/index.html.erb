@@ -1,7 +1,7 @@
 <h2>Comments</h2>
 
 <% @comments.each do |comment| %>
-  <div style="border: 1px solid; padding: 10px">
+  <div style="background-color: white; padding: 20px; margin: 10px 0 10px 0; border-radius: 10px; box-shadow: 5px 5px lightgray">
     <p> Commenter: <%= comment.commenter %></p>
     <p> Comment: <%= comment.body %></p>
     <span style="padding: 0 10px 20px 0"><%= link_to "View", article_comment_path(@article, comment) =%></span>

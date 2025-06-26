@@ -4,7 +4,7 @@
     <%= form.text_field :commenter %><br>
     <% if @comment.errors[:commenter].any? %>
       <% @comment.errors.full_messages_for(:commenter).each do |message| %>
-        <div style="color:red;"><%= message %></div>
+        <div style="color:red; font-style:italic"><%= message %></div>
       <% end %>
     <% end %>
   </div>
@@ -14,11 +14,11 @@
     <%= form.text_area :body %><br>
     <% if @comment.errors[:body].any? %>
       <% @comment.errors.full_messages_for(:body).each do |message| %>
-        <div style="color:red;"><%= message %></div>
+        <div style="color:red; font-style:italic"><%= message %></div>
       <% end %>
     <% end %>
   </div>
-  <div>
+  <div class="submit">
     <%= form.submit %>
   </div>
 <% end %>

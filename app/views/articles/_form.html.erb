@@ -3,7 +3,7 @@
     <%= form.label :title %><br>
     <%= form.text_field :title %><br>
     <% article.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
+      <div style="color:red; font-style:italic"><%= message %></div>
     <% end %>
   </div>
 
@@ -11,11 +11,11 @@
     <%= form.label :body %><br>
     <%= form.text_area :body %><br>
     <% article.errors.full_messages_for(:body).each do |message| %>
-      <div><%= message %></div>
+      <div style="color:red; font-style:italic"><%= message %></div>
     <% end %>
   </div>
 
-  <div>
+  <div class="submit">
     <%= form.submit %>
   </div>
 <% end %>
